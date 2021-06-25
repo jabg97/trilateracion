@@ -1,18 +1,94 @@
-# Getting Started
+# Trilateracion
+Prueba SpringBoot 
 
-### Reference Documentation
-For further reference, please consider the following sections:
+# Requisitos
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.1/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.5.1/maven-plugin/reference/html/#build-image)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.5.1/reference/htmlsingle/#using-boot-devtools)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.5.1/reference/htmlsingle/#boot-features-developing-web-applications)
+```
+Java 8 o Superior
+Netbeans o Eclipse
+Spring Boot
+Maven
+Git
+```
 
-### Guides
-The following guides illustrate how to use some features concretely:
+# Instalación
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+*Clonar el proyecto 
+Utiliza la consola paa clonar el proyecto
+```
+git clone https://github.com/jabg97/trilateracion.git
+```
 
+Para el backend se utilizo Spring boot 
+Para iniciar el servidor solo debes abrir el proyecto con el IDE Netbeans o eclipse e instalar las dependencias con Maven
+una vez cargadas las dependencia con Maven  compilas el proyecto y asegurate que este funcionando sobre el puerto 8080
+
+# Manual de uso
+
+Para calcular la posicion haga una peticion POST (con CURL o PostMan).
+
+url: antenas/calcular, (Devuelve el resultado).
+```
+http://localhost:8080/antenas/calcular
+```
+param: (Ejemplo de un json para enviar en el cuerpo de la petición).
+```
+{
+  "posiciones": [
+    [
+      30,
+      10
+    ],
+    [
+      10,
+      50
+    ],
+    [
+      120,
+      80
+    ]
+  ],
+  "distancias": [
+    15,
+    25,
+    60
+  ],
+  "mensajes": [
+    [
+      "",
+      "este",
+      "es",
+      "",
+      "",
+      "de",
+      "prueba."
+    ],
+    [
+      "hola",
+      "",
+      "es",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "un",
+      "mensaje",
+      "",
+      "prueba."
+    ]
+  ]
+}
+```
+
+Para ver el dibujo del ejemplo haga una peticion GET
+
+> url: antenas/dibujar, (Devuelve un dibujo del mapa).
+
+```
+http://localhost:8080/antenas/dibujar
+```
