@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>      
+        <title>Trilateración</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                min-width: 100vw;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #eee;
+            }
+
+            .console {
+                font-family: Verdana, sans-serif;
+                width: 90%;
+                height: auto;
+                min-height: 300px;
+                box-sizing: border-box;
+                margin: auto;
+            }
+
+            .console header {
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                background-color: #555;
+                height: 45px;
+                line-height: 45px;
+                text-align: center;
+                color: #DDD;
+            }
+
+            .console .consolebody {
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                box-sizing: border-box;
+                padding: 20px;
+                height: calc(100% - 40px);
+                background-color: #000;
+                color: #63de00;
+                font-weight: 500;
+            }
+
+            .console .consolebody pre{
+                border: solid 1px #63de00;
+                padding: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="console">
+            <header>
+                <p>api@trilateracion</p>
+            </header>
+            <div class="consolebody">
+                <p>> Para calcular la posicion haga una peticion POST
+                    con alguna de las siguientes url y parametros 
+                    con la estructura similar a la del ejemplo.</p>
+                <p>> url: antenas/calcular, (Devuelve el resultado).</p>
+                <p>> param: (Ejemplo de un json para enviar en el cuerpo de la petición).</p>
+                <pre id="json"></pre>
+                <p>> Para ver el dibujo del ejemplo haga una peticion GET</p>
+                <p>> url: antenas/dibujar, (Devuelve un dibujo del mapa).</p>
+            </div>
+        </div>
+        <script>
+            var data = {
+            "posiciones": [ [30, 10], [10, 50], [120, 80] ],
+            "distancias": [15, 25, 60],
+            "mensajes":[   
+            ["","este","es","","","de","prueba."],
+            ["hola","","es","","","",""],
+            ["","","","un","mensaje","","prueba."]
+            ]
+            };
+            document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 2);
+        </script>
+    </body>
+</html>

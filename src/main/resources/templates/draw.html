@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>hola este es un mensaje de prueba</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hola este es un mensaje de prueba</h1>
+    <canvas id="myCanvas" width="1024" height="820"></canvas>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const context = canvas.getContext('2d');
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        context.fillStyle = 'rgba(255,0,0,0.3)';
+        context.lineWidth = 1;
+        context.strokeStyle = '#000';
+        var px1 = 20;var px2 = 50;var px3 = 80;
+        var py1 = 30;var py2 = 10;var py3 = 120;
+        var d1 = 25;var d2 = 25;var d3 = 100;
+        var x = 41;var y = 27;
+        context.beginPath();
+        context.arc(centerX+px1, centerY-py1, d1, 0, 2 * Math.PI);
+        context.arc(centerX+px2, centerY-py2, d2, 0, 2 * Math.PI);
+        context.arc(centerX+px3, centerY-py3, d3, 0, 2 * Math.PI);
+              
+        context.fill();    
+        context.stroke();
+
+        context.fillStyle = 'rgba(255,0,0,0.5)';
+        context.fillRect(centerX+px1-3,centerY-py1-3,6,6);
+        context.fillRect(centerX+px3-3,centerY-py3-3,6,6);
+        context.fillRect(centerX+px2-3,centerY-py2-3,6,6);
+        context.fillStyle = 'rgba(15,15,255,0.8)';
+        context.fillRect(centerX+x-3,centerY-y-3,6,6); 
+    </script>
+</body>
+
+</html>
